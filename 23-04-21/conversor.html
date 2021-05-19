@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>conversor</title>
+</head>
+<body>
+    <label>Centigrados</label>
+    <input type="text" id="centigrados">
+    <button onclick="convertirC()">Convertir</button>
+    
+    <label>Fahrenheit</label>
+    <input type="text" id="fahrenheit">
+    <button onclick="convertirC()">Convertir</button>
+    
+    <label>Kelvin</label>
+    <input type="text" id="kelvin">
+    <button onclick="convertir()">Convertir</button>
+
+    <script>
+        function convertirC(){
+            gradosC = document.getElementById('centigrados').value * 9/5 + 32
+            gradosF = document.getElementById('fahrenheit').value = gradosC
+
+            gradosC = parseInt(document.getElementById('centigrados').value) + 273.15
+            gradosK = document.getElementById('kelvin').value = gradosC
+        }
+
+        
+    </script>
+    
+</body>
+</html>

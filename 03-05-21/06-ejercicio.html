@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ejercicio</title>
+  </head>
+  <body>
+    <label>Ingrese tarea</label>
+    <input id="nombreTarea" />
+    <button onclick="agregarTarea()">Agregar</button>
+    <ul id="listaTareas">
+    </ul>    
+    <div><span>Cantidad de tareas <samp id="numeroTareas">0</samp></span></div>
+    <div><span>Tareas Realizadas<samp id="numeroTareas">0</samp></span></div>
+    
+    <script>
+
+      const nombreTarea = document.getElementById('nombreTarea')
+      const listaTareas = document.getElementById('listaTareas')
+      const nuemeroTareas = document.getElementById('nuemeroTareas')
+      let totalTareas = 0
+
+     
+
+      function agregarTarea(){
+        const li = document.createElement('li')
+
+        const checkbox = document.createElement('input')
+        checkbox.setAttribute('type', 'checkbox')
+        checkbox.onchange = () => {
+
+        }
+
+        const tarea = document.createElement('span')
+        tarea.innerHTML = nombreTarea.value
+
+        listaTareas.appendChild(tarea)
+
+        li.appendChild(checkbox)
+        li.appendChild(tarea)
+
+        listaTareas.appendChild(li)
+        
+        totalTareas++
+        nuemeroTareas.innerHTML = totalTareas
+      
+      }
+
+
+
+    </script>
+  </body>
+</html>
