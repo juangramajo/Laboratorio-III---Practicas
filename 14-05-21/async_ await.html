@@ -8,7 +8,7 @@
   </head>
   <body>
     <script>
-      function promesa() {
+      async function promesa() {
         let p = new Promise((resolve, reject) => {
           let a = 2;
           setTimeout(() => {
@@ -19,19 +19,21 @@
             }
           }, 2000);
         });
+
         console.log("antes");
 
-        p.then((mensaje) => {
+        try {
+          const mensaje = await p
           console.log("En then " + mensaje);
-        }).catch((err) => {
+        }catch (err) {
           console.log("En catch " + err);
-        });
+        }
 
-        console.log('despues');
+        console.log("despues");
       }
-      console.log('antes promesa');
-      promesa()
-      console.log('despues promesa');
+      console.log("antes promesa");
+      promesa();
+      console.log("despues promesa");
 
       // setTimeout(() => {
       //   console.log("despues");
